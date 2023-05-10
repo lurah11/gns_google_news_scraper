@@ -17,7 +17,7 @@ base_url = 'https://news.google.com/'
 
 def init_driver(): 
     options = Options()
-    options.headless=False
+    options.headless=True
     service = Service('chromedriver.exe')
     driver = webdriver.Chrome(service=service,options=options)
     return driver
