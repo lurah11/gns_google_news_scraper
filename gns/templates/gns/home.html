@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google News Scraper</title>
+</head>
+<body>
+    <H2>GOOGLE NEWS SCRAPER</H2>
+    <form action="{% url 'get-news' %}" method="post">
+        {% csrf_token %}
+        <p>Submit your Query Here , use semicolon (;) to separate the topics </p>
+        <textarea name="query" id="" cols="60" rows="5"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
