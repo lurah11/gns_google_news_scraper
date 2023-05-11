@@ -18,7 +18,7 @@ base_url = 'https://news.google.com/'
 def init_driver(): 
     options = Options()
     options.headless=True
-    service = Service('chromedriver.exe')
+    service = Service('./chromedriver')
     driver = webdriver.Chrome(service=service,options=options)
     return driver
 
@@ -42,7 +42,7 @@ def get_title(article):
 
 def get_link(article): 
     link_a = article.select('h3 > a')[0]
-    href = link_a.get('href')[1:]
+    href = link_a.get('href')[2:]
     mod_href = f"{base_url}{href}"
     return mod_href
 

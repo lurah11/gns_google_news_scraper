@@ -9,6 +9,13 @@
 </head>
 <body>
     <H2>GOOGLE NEWS SCRAPER</H2>
+    <p>Scraping conditions: </p>
+    <ul>
+       <li>1. Only scrap the query(s) which are appeared at title of the news </li>
+       <li>2. Only scrap news within 48 hours </li>
+       <li>3. Result is downloaded as excel file </li>
+       <li>4. Base URL for Scraping = "https://news.google.com"</li>
+    </ul>
     <form action="{% url 'get-news' %}" method="post">
         {% csrf_token %}
         <p>Submit your Query Here , use semicolon (;) to separate the topics </p>

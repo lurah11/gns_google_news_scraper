@@ -12,13 +12,14 @@ def get_news(request):
     if request.method == "POST": 
         form = queryForm(request.POST)
         if form.is_valid():
-            try : 
+            # try : 
                 res = pd.DataFrame()
                 query_str = form.cleaned_data['query']
                 queries_w_space = query_str.split(";")
                 print(queries_w_space)
                 queries = [x.strip() for x in queries_w_space]
                 with init_driver() as driver: 
+                    print("driver here")
                     for query in queries : 
                         if res.empty:
                             df = scrap_data(driver,query)
@@ -39,8 +40,8 @@ def get_news(request):
                     response["Content-Disposition"] = f"attachment;filename={filename}"
                     res.to_excel(response)
                     return response
-            except : 
-                    return HttpResponse("error after form validation")
+            # except : 
+            #         return HttpResponse("error after form validation")
         else : 
             return HttpResponse("error due to invalid form ")
                         

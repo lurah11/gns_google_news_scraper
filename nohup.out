@@ -1,0 +1,16 @@
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W002) Your URL pattern '/get_news' [name='get-news'] has a route beginning with a '/'. Remove this slash as it is unnecessary. If this pattern is targeted in an include(), ensure the include() pattern has a trailing '/'.
+
+System check identified 1 issue (0 silenced).
+[10/May/2023 14:24:23] "GET / HTTP/1.1" 200 997
+[10/May/2023 14:24:45] "GET / HTTP/1.1" 200 997
+[10/May/2023 14:24:48] "GET / HTTP/1.1" 200 997
+[10/May/2023 14:24:56] "GET / HTTP/1.1" 200 997
+[10/May/2023 14:41:49] "POST /%2Fget_news HTTP/1.1" 200 9891
+[10/May/2023 14:46:27] "GET / HTTP/1.1" 200 997
+Not Found: /favicon.ico
+[10/May/2023 14:46:27] "GET /favicon.ico HTTP/1.1" 404 2408
+[10/May/2023 14:46:53] "POST /%2Fget_news HTTP/1.1" 200 13403
